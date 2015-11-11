@@ -1,1 +1,8 @@
-<p>This is the about view.</p>
+<h1>Aqu&iacute; tienes el m&aacute;s reciente Tweet:</h1>
+<div class="jumbotron">
+    {{herokuMessage.data}}
+    <div ng-show="errors.herokuError">
+        {{errors.herokuError.encabezado}}
+        {{errors.herokuError.error}}
+    </div>
+</div>
