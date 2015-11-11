@@ -1,15 +1,6 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name monitorSocialCrmFrontApp.controller:AboutCtrl
- * @description
- * # AboutCtrl
- * Controller of the monitorSocialCrmFrontApp
- */
-angular.module('monitorSocialCrmFrontApp')
-  .controller('ContactCtrl', function ($scope, $http) {
-    $scope.errors = {};
+function getFromDate($scope, $http) {
     $http.get('http://date.jsontest.com')
         .then(
         function(data) {
@@ -21,6 +12,18 @@ angular.module('monitorSocialCrmFrontApp')
                 msg : err
             };
         });
+}
+
+/**
+ * @ngdoc function
+ * @name monitorSocialCrmFrontApp.controller:AboutCtrl
+ * @description
+ * # AboutCtrl
+ * Controller of the monitorSocialCrmFrontApp
+ */
+angular.module('monitorSocialCrmFrontApp')
+  .controller('ContactCtrl', function ($scope, $http, $interval) {
+    $scope.errors = {};
+    $interval(getFromDate($scope, $http), 5000, true);
     $scope.awesomeThings = ['HTML5 Boilerplate', 'AngularJS', 'Karma'];
-  }
-);
+  });
