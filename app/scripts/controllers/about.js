@@ -13,7 +13,7 @@ angular.module('monitorSocialCrmFrontApp')
     $http.get('https://monitor-prueba-social-1.herokuapp.com/mensajes')
         .then(
         function(data) {
-            $scope.herokuMessage = data;    
+            $scope.herokuMessage = data.data;    
         },
         function(err) {
             $scope.errors.herokuError = {

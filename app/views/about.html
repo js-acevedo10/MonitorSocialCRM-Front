@@ -1,6 +1,7 @@
 <h1>Aqu&iacute; tienes el m&aacute;s reciente Tweet:</h1>
 <div class="jumbotron">
-    {{herokuMessage.data}}
+    <h1>{{herokuMessage.evento}}</h1>
+    <p>{{herokuMessage.texto}}</p>
     <div ng-show="errors.herokuError">
         {{errors.herokuError.encabezado}}
         {{errors.herokuError.error}}
