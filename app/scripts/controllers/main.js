@@ -11,6 +11,7 @@ angular.module('monitorSocialCrmFrontApp')
   .controller('MainCtrl', function ($scope, $http, $timeout) {
     $scope.errors = {};
     $scope.numLlamadas = 0;
+    $http.defaults.useXDomain = true;
     
     var herokk = function() {
             $http.get('https://monitor-prueba-social-1.herokuapp.com/mensajes')
